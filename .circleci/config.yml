@@ -1,9 +1,10 @@
-version: 2
+version: 2.1
+orbs:
+  win: circleci/windows@2.2.0
 jobs:
   build:
     working_directory: ~/code
-    macos:
-      xcode: 11.3.0
+    executor: win/default
     #docker:
     #  - image: circleci/node:10
     steps:
