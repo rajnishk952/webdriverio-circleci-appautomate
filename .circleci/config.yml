@@ -7,15 +7,15 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Dependencies
-          command: npm install --save
-
+        name: Install Dependencies
+        command: npm install --save
+          
       - run:
-          name : Run single test
-          command : |
-            npm run single
-      
-      -run:
+        name : Run single test
+        command : |
+          npm run single
+       
+      - run:
         name: Run parallel test
         command: |
           npm run parallel
