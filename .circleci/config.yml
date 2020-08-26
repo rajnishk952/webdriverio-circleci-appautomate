@@ -1,24 +1,16 @@
-version: 2.1
+version: 2
 jobs:
-  run_tests: 
+  build:
+    working_directory: ~/code
     docker:
-      - image: circleci/node:10
-
+      - image: circleci/android:api-25-alpha
     steps:
-      — checkout
+      - checkout
       - run:
-        name: Instsall npm dependencies
-        command: |
-          npm install --save
-      — run:
-        name: Run Single Test
-        command: |
-          npm run single
-      — run:
-        name: Run Parallel Test
-        command: |
-          npm run parallel
-      — run:
-        name: Run Local Test
-        command: |
-          npm run local
+          name: Install Dependencies
+          command: npm install --save
+
+      - run:
+          name : Run all test
+          command : |
+            npm run test
