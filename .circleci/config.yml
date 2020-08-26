@@ -8,13 +8,17 @@ jobs:
       — checkout
       - run: 
         name: Instsall npm dependencies
-        command: npm install
+        command: |
+          npm install --save
       — run: 
         name: Run Single Test
-        command: npm run single
+        command: |
+          npm run single
       — run: 
         name: Run Parallel Test
-        command: npm run parallel
+        command: |
+          npm run parallel
       — run: 
         name: Run Local Test
-        command: npm run local
+        command: |
+          npm run local
