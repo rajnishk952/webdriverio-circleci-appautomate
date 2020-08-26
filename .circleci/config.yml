@@ -1,19 +1,20 @@
 version: 2.1
 jobs:
-  run_tests: 
+  build:
+    working_directory: ~/code
     docker:
       - image: circleci/node:10
 
     steps:
-      — checkout
+      - checkout
       - run:
-        name: Instsall npm dependencies
-        command: npm install
-      
-      — run:
-        name: Run Single Test
-        command: npm run single
-      
-      — run:
-        name: Run Parallel Test
-        command: npm run parallel
+          name: Install npm Dependencies
+          command: npm install --save
+
+      - run:
+          name : Run Single Test
+          command : npm run single
+
+      - run:
+          name : Run Parallel Test
+          command : npm run parallel
