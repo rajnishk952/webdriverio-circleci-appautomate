@@ -1,12 +1,9 @@
 version: 2.1
-orbs:
-  win: circleci/windows@2.2.0
 jobs:
   build:
     working_directory: ~/code
-    executor: win/default
-    #docker:
-    #  - image: circleci/node:10
+    docker:
+      - image: circleci/node:10
     steps:
       - checkout
       - run:
@@ -14,6 +11,11 @@ jobs:
           command: npm install --save
 
       - run:
-          name : Run all test
+          name : Run single test
           command : |
-            npm run test
+            npm run single
+      
+      -run:
+        name: Run parallel test
+        command: |
+          npm run parallel
