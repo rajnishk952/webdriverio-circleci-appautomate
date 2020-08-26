@@ -6,19 +6,19 @@ jobs:
 
     steps:
       — checkout
-      - run: 
+      - run:
         name: Instsall npm dependencies
         command: |
           npm install --save
-      — run: 
+      — run:
         name: Run Single Test
         command: |
           npm run single
-      — run: 
+      — run:
         name: Run Parallel Test
         command: |
           npm run parallel
-      — run: 
+      — run:
         name: Run Local Test
         command: |
           npm run local
