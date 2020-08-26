@@ -1,0 +1,20 @@
+{
+  "name": "webdriverio-cucumberjs-appium-app-browserstack",
+  "version": "1.0.0",
+  "description": "Sample scripts for WebdriverIO-CucumberJS and BrowserStack App Automate",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run single && npm run parallel && npm run local",
+    "single": "./node_modules/.bin/wdio conf/single.conf.js",
+    "parallel": "./node_modules/.bin/wdio conf/parallel.conf.js",
+    "local": "./node_modules/.bin/wdio conf/local.conf.js"
+  },
+  "author": "Ashwin G",
+  "license": "ISC",
+  "devDependencies": {
+    "browserstack-local": "^1.3.3",
+    "glob": "^7.1.2",
+    "wdio-cucumber-framework": "^2.2.3",
+    "webdriverio": "^4.13.1"
+  }
+}
